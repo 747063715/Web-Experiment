@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>用户调查</h1>
+    <form action="">
+        <div>
+            <span>姓名:</span>
+            <input type="text" name="" id="">
+        </div>
+        <div>
+            <span>网址:</span>
+            <input type="text" name="" id="" value="http://">
+        </div>
+        <div>
+            <span>密码:</span>
+            <input type="password" name="" id="" pattern="^[a-zA-Z0-9]" maxlength="16" minlength="8">
+        </div>
+        <div>
+            <span>确认密码:</span>
+            <input type="password" name="" id="" pattern="^[a-zA-Z0-9]">
+        </div>
+        <div>
+            <span>请上传你的照片:</span>
+            <input type="file" name="" id="">
+        </div>
+        <div>
+            <span>请选择你喜欢的音乐:</span>
+            <input type="checkbox" name="" id="yaogun"><label for="yaogun">摇滚乐</label>
+            <input type="checkbox" name="" id="jueshi"><label for="jueshi">爵士</label>
+            <input type="checkbox" name="" id="liuxing"><label for="liuxing">流行乐</label>
+        </div>
+        <div>
+            <span>请选择你居住的城市:</span>
+            <input type="radio" name="cities" id="beijing"><label for="beijing">北京</label>
+            <input type="radio" name="cities" id="shanghai"><label for="shanghai">上海</label>
+            <input type="radio" name="cities" id="guangzhou"><label for="guangzhou">广州</label>
+        </div>
+        <div>
+            <span>请选择你喜欢的网站:</span>
+            <select name="" id="">
+                <option value="">新浪</option>
+                <option value="">雅虎</option>
+                <option value="">搜狐</option>
+            </select>
+        </div>
+        <div>
+            <span>请选择你喜欢的水果:</span>
+            <input list="fruit" id="myfruit" value="apple">
+            <datalist id="fruit">
+                <option value="apple">
+                <option value="orange">
+                <option value="banana">
+            </datalist>
+        </div>
+        <br>
+        <div>
+            <span>请留言:</span>
+            <textarea name="" id="" cols="70" rows="10"></textarea>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="提交">
+            <input type="reset" value="重置">
+        </div>
+
+    </form>
+</body>
+
+</html>
