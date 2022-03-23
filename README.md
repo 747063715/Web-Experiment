@@ -84,7 +84,9 @@ Web 设计与开发实验
 
 **实验要求：将文件“实验资料_HTML.txt”中的内容按照下图样式做成网页，保存文件名为yujisuan.htm。**
 
-![图片alt](图片链接 "图片title")
+![图片alt](/Image/Snipaste.png "图片title")
+
+
 
 
 
