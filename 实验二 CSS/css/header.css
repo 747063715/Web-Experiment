@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+body,ul,li{
+	margin:0;
+	padding:0;
+}
+#header {
+	width:960px;
+	margin:20px auto 20px;
+}
+#nav ul {
+	list-style-type:none;
+}
+#nav li {
+	float:left;
+}
+#nav a:link, #nav a:visited {
+	color:#000;
+	display:block;
+	text-align:center;
+	width:104px;
+	height: 34px;
+	padding: 0 8px ;
+	text-decoration: none;
+	border-bottom: 4px solid #DEDEDE;
+	float: left;
+	
+}
+#nav a:hover {
+	border-bottom: 4px solid #6184A6;
+	color: #336699;
+	text-decoration: none;
+}

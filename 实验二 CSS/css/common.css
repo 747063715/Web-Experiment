@@ -1,0 +1,20 @@
+@charset "gb2312";
+#content{
+	width:700px;
+	float:right;
+}
+h1{
+  font-family: "Î¢ÈíÑÅºÚ","ºÚÌå";
+  font-size: 22px;
+  height: 35px;
+  line-height: 35px;
+  text-align:center;
+}
+p{
+	text-indent:2em;
+}
+.pub_date{
+	font-size:12px;
+	color:#BBB;
+	text-align:center;
+}
