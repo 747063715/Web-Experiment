@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js实验五</title>
+    <link rel="shortcut icon" href="../images/网络地球仪.ico">
+    <style>
+        body {
+            margin: 0 auto;
+            background: url("../images/wallhaven.png") no-repeat;
+            box-shadow: 0 0 0 0 rgb(59,45,159);   /*阴影*/
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .bod {
+            width: 645px;
+            height: 600px;
+            margin: 0 auto;
+        }
+
+        .top {
+            padding-left: 30px;
+            padding-top: 26px;
+
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+            height: 108px;
+            background-color: rgba(192, 225, 255, .3);
+        }
+        h1 {
+            color: rgb(130, 102, 102);
+            font-family: 宋体;
+        }
+
+        p {
+            color: rgb(130, 102, 102);
+        }
+        .buttom {
+            height: 492px;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            background-color: rgba(210, 233, 255, .2);
+        }
+        .box {
+            padding-top: 22px;
+            margin-left: 175px;
+        }
+        input {
+            width: 258px;
+            height: 38px;
+        }
+        button {
+            margin-top: 28px;
+            margin-left: 240px;
+            border: 0;
+            color: white;
+            width: 107px;
+            height: 43px;
+            background-color: rgb(90, 157, 195);
+        }
+        .passwd {
+            margin-left: 185px;
+        }
+        .repasswd {
+            margin-left: 138px;
+        }
+        .name {
+            margin-left: 185px;
+        }
+        .warning {
+            /* 显示隐藏 */
+            display: none;
+            color:red;
+            font-size: 12px;
+        }
+
+    </style>
+    <script src="../js/jquery.js"></script>
+</head>
+
+<body>
+    <div class="bod">
+        <div class="top">
+            <h1>用户注册</h1>
+            <p>Please fill all the texts in the fieds</p>
+        </div>
+        <div class="buttom">
+            <form action="http://www.yangyang197.top" method="get">
+                <div class="box">
+                    <span>Email：</span>
+                    <input type="text" name="" id="email">
+                    <span class="warning">Email值不能为空</span>
+                </div>
+                <div class="box passwd">
+                    <span>密码：</span>
+                    <input type="password" name="" id="passwd">
+                    <span class="warning">密码不能为空</span>
+                </div>
+                <div class="box repasswd">
+                    <span>重输入密码：</span>
+                    <input type="password" name="" id="repasswd">
+                    <span class="warning">两次输入的密码不一致</span>
+                </div>
+                <div class="box name">
+                    <span>姓名：</span>
+                    <input type="text" name="" id="name2">
+                    <span class="warning">姓名不能为空</span>
+                </div>
+                <button value="Submit" id="submit">注册</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    var email = document.getElementById("email");
+    var passwd = document.getElementById("passwd");
+    var repasswd = document.getElementById("repasswd");
+    var name2 = document.getElementById("name2");
+    //验证Email值不能为空，必须包含@符号
+    email.onblur = function() {
+        var reg = /^\w+@\w+\.\w+$/;    //密码的正则表达式
+        if (email.value == "") {
+            $(".warning").eq(0).css("display", "inline-block");
+        } else if (!reg.test(email.value)) {
+            $(".warning").eq(0).css("display", "inline-block");
+        } else {
+            $(".warning").eq(0).css("display", "none");
+        }
+    }
+
+    //密码不能为空，长度大于或等于6位
+    passwd.onblur = function() {
+        if (passwd.value == "") {
+            $(".warning").eq(1).css("display", "inline-block");
+        } else if (passwd.value.length < 6) {
+            $(".warning").eq(1).css("display", "inline-block");
+        } else {
+            $(".warning").eq(1).css("display", "none");
+        }
+    }
+
+    //两次输入的密码不可以不一致
+    repasswd.onblur = function() {
+        if (repasswd.value != passwd.value) {
+            $(".warning").eq(2).css("display", "inline-block");
+        } else {
+            $(".warning").eq(2).css("display", "none");
+        }
+    }
+
+    //姓名不能为空，不能包含数字
+    name2.onblur = function() {
+        var reg = /^[\u4e00-\u9fa5]{2,4}$/;
+        if (name2.value == "") {
+            $(".warning").eq(3).css("display", "inline-block");
+        } else if (!reg.test(name2.value)) {
+            $(".warning").eq(3).css("display", "inline-block");
+        } else {
+            $(".warning").eq(3).css("display", "none");
+        }
+    }
+
+</script>
+</html>

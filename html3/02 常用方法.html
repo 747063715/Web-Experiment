@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn1">获取内容</button>
+    <button class="btn2">修改内容</button>
+
+    <hr>
+
+    <button class="btn3">添加类</button>
+    <button class="btn4">删除类</button>
+    <button class="btn5">切换类</button>
+
+    <div class="box">hello</div>
+    <script src="jquery.js"></script>
+    <script>
+        $('.btn1').click(function (){
+            console.log($('.box').html());
+        })
+
+        $('.btn2').click(function (){
+            // $('.box').html('爱创');
+            $('.box').html('<h1>爱创</h1>');
+        })
+
+        $('.btn3').click(function (){
+            $('.box').addClass('red');
+
+        })
+
+        $('.btn4').click(function (){
+            $('.box').removeClass('red');
+
+        })
+
+        $('.btn5').click(function (){
+            $('.box').toggleClass('red');
+
+        })
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 80px;
+            border-right: 10px solid #f30;
+        }
+        div:first-child {
+            border-right-color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <script src="./jquery.js"></script>
+    <script>
+        //用$获取元素
+        var divs = $('div');
+        // console.log(divs.length);
+        // console.log($(window));
+        // console.log($(document));
+        // console.log($(function() {}));
+        // console.log($([]));
+        // console.log($({}));
+        // console.log($(''));
+        // console.log(divs.length);
+        //设置样式
+        divs.css('font-size','50px');
+        divs.css('borderBottom', '1px solid green');
+        //设置多个属性
+        divs.css({
+            background: 'pink',
+            width: 400,
+        })
+        //获取样式  获取的是第一个元素的样式
+        // console.log(divs.css('border-right'));
+        // console.log(divs.css('borderRight'));
+
+        // console.log(divs.css('height'));
+        // console.log(parseInt(divs.css('height')) + 20);
+
+        //绑定事件
+        // divs.on('click', function(){
+        //     //this指向当前的元素
+        //     console.log(this)
+        //     //转换成JQuery对象
+        //     $(this).css('background', 'yellowgreen')
+        // })
+
+        //事件简写
+        divs.click(function(){
+            //跟on方法一样，会对所有获取的元素绑定事件
+            console.log(this)
+        })
+
+
+    </script>
+</body>
+
+</html>

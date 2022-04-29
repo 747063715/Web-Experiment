@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js实验四</title>
+    <script src="../js/jquery.js"></script>
+    <!-- 样式部分 -->
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        .bod {
+            width: 300px;
+            height: 310px;
+            margin: 0 auto;
+            background-color: rgb(35, 113, 211);
+        }
+
+        input {
+            color:rgb(35, 113, 211);
+            font-weight: bold;
+            margin-top: 3px;
+            margin-left: 3px;
+            height: 42px;
+            width: 293px;
+        }
+
+        table {
+            width: 290px;
+            height: 250px;
+            border-collapse: collapse;
+            margin: 0 auto;
+
+        }
+
+        table tr td {
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            line-height: 62.25px;
+            border: 2px solid white;
+            width: 57.8px;
+            height: 62.25px;
+        }
+
+        table tr td:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<!-- 内容部分 -->
+<body>
+    <div class="bod">
+        <input type="text" name="output" id="output">
+        <table>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>+</td>
+                <td>c</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>-</td>
+                <td rowspan="3">=</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>*</td>
+            </tr>
+            <tr>
+                <td>+/-</td>
+                <td>0</td>
+                <td>.</td>
+                <td>/</td>
+            </tr>
+        </table>
+    </div>
+    <!-- 实现计算器的计算部分 -->
+    <script>
+        //批量绑定事件
+        var arr = document.getElementsByTagName('td');
+        for (var i = 0; i < arr.length; i++) {
+            arr[i].onclick = function() {
+                var input = document.getElementById('output');
+                var value = this.innerHTML;
+                if (value == 'c') {
+                    input.value = '';
+                } else if (value == '=') {
+                    input.value = eval(input.value);
+                } else {
+                    input.value += value;
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js实验一</title>
+</head>
+<body>
+
+    
+</body>
+<script>
+    var myDate = new Date();
+    var hour = myDate.getHours();
+    var minute = myDate.getMinutes();
+    switch(hour){
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+        case 11:
+        case 12:
+            document.write("<h1>早上好！</h1>");
+            break;
+        case 13:
+        case 14:
+        case 15:
+        case 16:
+        case 17:
+        case 18:
+            document.write("<h1>下午好！</h1>");
+            break;
+        case 19:
+        case 20:
+        case 21:
+        case 22:
+        case 23:
+        case 24:
+            document.write("<h1>晚上好！</h1>");
+            break;
+    }
+</script>
+</html>

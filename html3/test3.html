@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .date {
+            width: 300px;
+            height: 220px;
+            border: 1px solid #000;
+            margin: 100px auto;
+        }
+
+        .title {
+            width: 200px;
+            display: flex;
+            font-size: 12px;
+            margin: auto;
+            text-align: center;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .year {
+            margin: 0 40px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #week {
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            margin: auto;
+            list-style-type: none;
+            display: flex;
+        }
+
+        #week li {
+            display: inline-block;
+            text-align: center;
+            flex: 1;
+        }
+
+        #ul {
+            list-style-type: none;
+            margin-top: 5px;
+        }
+
+        #ul li {
+            display: inline-block;
+            width: 40px;
+            height: 21px;
+            text-align: center;
+            border: 1px solid #fff;
+        }
+
+        .current {
+            color: red;
+        }
+
+        #ul li:hover {
+            border: 1px solid red;
+        }
+
+        #prev,
+        #next {
+            cursor: pointer;
+        }
+    </style>
+    <script src="../js/jquery.js"></script>
+
+</head>
+
+<body>
+    <div class="date">
+        <div class="title">
+            <span id="prev">&lt;上一月</span>
+            <div class="year">
+                <span id="year">2021</span>
+                <span id="month">5月</span>
+            </div>
+            <span id="next">下一月&gt;</span>
+        </div>
+        <!-- 用ul做日历 -->
+        <ul id="week">
+            <li>日</li>
+            <li>一</li>
+            <li>二</li>
+            <li>三</li>
+            <li>四</li>
+            <li>五</li>
+            <li>六</li>
+        </ul>
+        <ul id="ul">
+            <!-- 每个月的天数 -->
+
+        </ul>
+    </div>
+</body>
+<script>
+    // date对象，方便切换月份，所以设置为全局对向
+    let date = new Date();
+    // 点击切换月份的事件
+    document.getElementById('prev').addEventListener('click', function () {
+        date.setMonth(date.getMonth() - 1);
+        add();
+    })
+    document.getElementById('next').addEventListener('click', function () {
+        date.setMonth(date.getMonth() + 1);
+        add();
+    })
+    add();
+
+    //制作日历的函数
+    function add() {
+        // 当前年
+        let cYear = date.getFullYear();
+        // 当前月
+        let cMonth = date.getMonth() + 1;
+        // 获取到当前日期
+        let cDay = date.getDate();
+
+        // 写入年月
+        document.getElementById('year').innerHTML = cYear;
+        document.getElementById('month').innerHTML = cMonth + '月';
+
+
+        let days = new Date(cYear, cMonth, -1);
+        // 当前月份的天数
+        let n = days.getDate() + 1;
+        // 每个月的第一天是星期几
+        let week = new Date(cYear, cMonth - 1, 1).getDay();
+        let html = '';
+        // 写入dom
+        for (let i = 0; i < week; i++) {
+            html += `<li></li>`
+        }
+        for (let i = 1; i <= n; i++) {
+            if (i == cDay) {
+                html += `<li class="current">${i}</li>`
+            } else {
+                html += `<li>${i}</li>`
+            }
+        }
+        // 一次性插入
+        document.getElementById('ul').innerHTML = html
+    }
+</script>
+
+</html>

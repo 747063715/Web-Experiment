@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>JavaScript Validation</h1>
+
+    <p>请输入 1 到 10 之间的数字：</p>
+
+    <input id="numb">
+
+    <button type="button" onclick="myFunction()">提交</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            // 获取 id = "numb" 的输入字段的值
+            let x = document.getElementById("numb").value;
+            // 如果 x 不是数字或小于 1 或大于 10
+            let text;
+            if (isNaN(x) || x < 1 || x > 10) {
+                text = "输入无效";
+            } else {
+                text = "输入没问题";
+            }
+            document.getElementById("demo").innerHTML = text;
+        }
+    </script>
+
+</body>
+
+</html>

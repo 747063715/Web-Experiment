@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // var a = { name: "myName", id: 2 };
+        // var b = [1, true, 2];
+        // var c = 1;
+        // var d = "1";
+        // var e = true;
+        // var f;
+        // console.log(typeof a);
+        // console.log(typeof b);
+        // console.log(typeof c);
+        // console.log(typeof d);
+        // console.log(typeof e);
+        // console.log(typeof f);
+        function mainJs(a, b) {
+            //请在此处编写代码
+            /***********Begin**********/
+            //将两个字符串参数a和b转换为数字；
+            var c = parseInt(a) % parseInt(b);
+            a = a.toString();
+            b = b.toString();
+            c = c.toString();
+            /*********End************/
+            return a + b + c;
+        }
+        console.log(mainJs("1", "2"));
+        // 逻辑与有两个操作数，中间用&&连接，只有两个操作数都是true结果才是true；  
+        // 其中一个操作数不是布尔型，当左操作数为真值时，返回右操作数。当左操作数为假值时，返回左操作数。
+
+
+        // 逻辑或同样有两个操作数，用||连接，至少有一个操作数为true时结果为true；  
+        //其中一个操作数不是布尔型，当左操作数为真值时，返回左操作数。当左操作数为假值时，返回右操作数。
+        var number1 = 1;
+        var number2 = 0;
+        var string = "a";
+        console.log(number1 && string);//输出字符串"a"  
+        console.log(number1 || string);//输出数字1  
+        console.log(!number1);//false  
+
+
+
+    </script>
+</body>
+
+</html>

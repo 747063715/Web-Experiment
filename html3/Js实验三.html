@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test4</title>
+    <!-- 样式 -->
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .date {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+        }
+        .title {
+            background-color: rgb(120, 179, 237);
+            width: 500px;
+            display: flex;
+            font-size: 26px;
+            font-family: 宋体;
+            margin: auto;
+            text-align: center;
+            justify-content: space-around;
+            align-items: center;
+        }
+        #week {
+            background-color: rgb(231, 241, 253);
+
+            margin: auto;
+            list-style-type: none;
+            display: flex;
+        }
+        #week li {
+            display: inline-block;
+            text-align: center;
+            flex: 1;
+        }
+        #ul {
+            width: 500px;
+            height: 400px;
+            background-color: rgb(255, 255, 255);
+            list-style-type: none;
+            margin-top: 5px;
+        }
+        #ul li {
+            display: inline-block;
+            width: 71px;
+            height: 70px;
+            text-align: center;
+            line-height: 70px;
+        }
+        #ul li:hover {
+            cursor: pointer;
+        }
+        /* 显示当前日期 */
+        .current {
+            color: red;
+        }
+
+        #pre,
+        #next {
+            cursor: pointer;
+        }
+    </style>
+    <script src="../js/jquery.js"></script>
+</head>
+
+<!-- 日历部分 -->
+<body>
+    <div class="date">
+        <!-- 标题 -->
+        <div class="title">
+            <span id="pre">&lt;</span>
+            <div class="year">
+                <span id="year">2022年</span>
+                <span id="month">4月</span>
+            </div>
+            <span id="next">&gt;</span>
+        </div>
+        <!-- 用ul做日历 -->
+        <ul id="week">
+            <li>日</li>
+            <li>一</li>
+            <li>二</li>
+            <li>三</li>
+            <li>四</li>
+            <li>五</li>
+            <li>六</li>
+        </ul>
+        <ul id="ul">
+            <!-- 每个月的天数 -->
+        </ul>
+
+    </div>
+</body>
+<script>
+    // 获取当前日期
+    let date = new Date();
+    document.getElementById('pre').addEventListener('click', function(){
+        date.setMonth(date.getMonth()-1);
+        // 切换月份
+        add();
+    })
+
+    document.getElementById('next').addEventListener('click', function(){
+        date.setMonth(date.getMonth()+1);
+        // 切换月份
+        add();
+    })
+    add();
+    //日历函数
+    function add(){
+        // 获取当前月份
+        let cYear = date.getFullYear();
+
+
+        let cMonth = date.getMonth()+1;
+
+
+        let cDay = date.getDate();
+        document.getElementById('year').innerHTML = cYear+'年';
+        document.getElementById('month').innerHTML = cMonth+'月';
+
+
+        let days = new Date(cYear, cMonth, -1);
+        // 当前月份的天数
+        let n = days.getDate()+1;
+
+        // 每个月的第一天是星期几
+        let week = new Date(cYear, cMonth-1, 1).getDay();
+        let html='';
+        // 写入dom
+        
+        for(let i=0;i<week;i++){
+            html += `<li></li>`
+        }
+
+        for(let i=1;i<=n;i++){
+            if(i==cDay){
+                html += `<li class="current">${i}</li>`
+            }else{
+                html += `<li>${i}</li>`
+            }
+            
+        }
+        document.getElementById('ul').innerHTML = html;
+    }
+
+    // 处理鼠标点击事件，显示点击的日期
+    document.getElementById('ul').addEventListener('click', function(e){
+        let target = e.target;
+        if(target.nodeName.toLowerCase()=='li'){
+            let date = target.innerHTML;
+            alert("你点的是"+date+"号");
+        }
+    })
+</script>
+</html>

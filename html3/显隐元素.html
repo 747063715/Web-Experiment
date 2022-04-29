@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>显隐元素</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 300px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>切换</button>
+    <hr>
+    <div class="box"></div>
+    <script src="./jquery.js"></script>
+    <script>
+        // 获取元素
+        var btns = $('button');
+        var box = $('.box');
+        //通过索引值获取，通过eq方法获取
+        // console.log(btns[0], btns.eq(0));
+        //eq方法返回jquery对象，因此可以连续打点调用
+        btns.eq(0).click(function () {
+
+            // box.show();
+            //参数表示变化的时间，单位毫秒ms
+            box.show(1000, function () {
+                alert(1);
+            });
+            // box.fadeIn();
+
+        })
+        btns.eq(1).click(function () {
+            // box.hide();
+            //参数表示变化的时间，单位毫秒ms
+            box.hide(1000, function(){
+                alert(1);
+            });
+            // box.fadeOut();
+
+        })
+        btns.eq(2).click(function () {
+            // box.toggle();
+            //参数表示变化的时间，单位毫秒ms
+            box.toggle(1000);
+            // box.fadeToggle();
+
+        })
+
+        //源生js的实现
+
+    </script>
+</body>
+
+</html>
