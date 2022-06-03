@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var orange = {
+    weight:"200g",
+    color:"orange",
+    taste:"sour"
+};
+var car = {
+    brand:"Jaguar",
+    price:"$80000",
+    model:"XFL"
+}
+function mainJs(a){
+	//请在此处编写代码
+    /*********begin*********/
+    var result = "";
+    if(a in car) {
+        for(att in car) {
+            result += att;
+        }
+    }
+    else {
+        for(att in orange) {
+            result += att;
+        }
+    }
+    return result;
+    /*********end*********/
+}
+var price;
+console.log(mainJs(price));
+</script>
+</html>

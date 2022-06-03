@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js时间</title>
+    <style>
+        /* 定义动画 */
+        @keyframes yidong {
+            from{
+                transform: translateX(0);
+
+            }
+            to{
+                transform: translateX(800px);
+
+            }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav div {
+            text-align: center;
+            line-height:100px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 10px;
+            float: left;
+            border-radius:25px;
+        }
+        nav {
+            width: 600px;
+            height: 300px;
+
+            margin: 10px auto;
+        }
+        div:hover {
+            cursor: pointer;
+            
+        }
+        .navgate {
+            /* 调用动画 */
+            animation: yidong 1s  infinite linear alternate;
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            margin: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- 新建一个盒子 -->
+    <nav>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </nav>
+    <div class="navgate">
+
+    </div>
+
+
+
+</body>
+<script>
+    var d1 = new Date();
+    console.log(d1.getTime());
+    
+
+
+    
+
+
+
+
+
+</script>
+</html>
